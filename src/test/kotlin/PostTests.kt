@@ -1,5 +1,4 @@
-import org.testng.Assert
-import org.testng.Assert.assertEquals
+import org.testng.Assert.*
 import org.testng.annotations.Test
 import post.Post
 import service.WallService
@@ -11,7 +10,7 @@ class PostTests {
         val post = Post()
         val expected = 1
         WallService.add(post)
-        val actual = WallService.posts.size
+        val actual = post.id
         assertEquals(actual, expected)
     }
 
@@ -21,8 +20,7 @@ class PostTests {
         post.id = 1
         WallService.add(post)
         val actual = WallService.update(post)
-        val expected = true
-        assertEquals(actual, expected)
+        assertTrue(actual)
     }
 
     @Test
@@ -30,7 +28,6 @@ class PostTests {
         val post = Post()
         post.id = 20
         val actual = WallService.update(post)
-        val expected = false
-        assertEquals(actual, expected)
+        assertFalse(actual)
     }
 }

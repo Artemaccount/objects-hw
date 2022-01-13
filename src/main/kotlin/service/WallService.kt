@@ -8,6 +8,7 @@ object WallService {
 
     fun add(post: Post): Post {
         id++
+        post.id = id
         posts += post
         return posts.last()
     }
