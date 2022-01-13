@@ -1,3 +1,3 @@
 package post
 
-data class Views(val count: Int)
+data class Views(val count: Int = 1)
