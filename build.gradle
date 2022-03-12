@@ -1,5 +1,5 @@
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.6.0'
+    id 'org.jetbrains.kotlin.jvm' version '1.6.10'
 }
 
 group 'org.example'
@@ -11,10 +11,11 @@ repositories {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib"
-    // https://mvnrepository.com/artifact/org.testng/testng
-    testImplementation 'org.testng:testng:6.9.10'
+    // https://mvnrepository.com/artifact/junit/junit
+    testImplementation 'junit:junit:4.13.2'
+
 }
 
 test{
-    useTestNG()
+    useJUnit()
 }

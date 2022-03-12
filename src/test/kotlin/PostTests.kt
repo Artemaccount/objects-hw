@@ -1,5 +1,7 @@
-import org.testng.Assert.*
-import org.testng.annotations.Test
+import exception.PostNotFoundException
+import org.junit.Assert.*
+import org.junit.Test
+import post.Comment
 import post.Post
 import service.WallService
 
@@ -29,5 +31,21 @@ class PostTests {
         post.id = 20
         val actual = WallService.update(post)
         assertFalse(actual)
+    }
+
+    @Test(expected = PostNotFoundException::class)
+    fun create_comment_exception_test(){
+        val comment = Comment()
+        comment.postId = 33
+        WallService.createComment(comment)
+    }
+
+    @Test
+    fun create_comment_success_test(){
+        val post = Post()
+        WallService.add(post)
+        val comment = Comment()
+        comment.postId = 1
+        WallService.createComment(comment)
     }
 }
