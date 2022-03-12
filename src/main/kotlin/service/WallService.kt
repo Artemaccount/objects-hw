@@ -6,7 +6,7 @@ import post.Post
 
 object WallService {
     var posts = emptyArray<Post>()
-    private var comments = emptyArray<Comment>()
+    var comments = emptyArray<Comment>()
 
     private var id: Int = 0
 

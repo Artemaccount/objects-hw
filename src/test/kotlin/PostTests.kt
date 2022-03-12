@@ -47,5 +47,8 @@ class PostTests {
         val comment = Comment()
         comment.postId = 1
         WallService.createComment(comment)
+        val expected = 1
+        val actual = WallService.comments.size
+        assertEquals("Количество комментариев не увеличилось", expected, actual)
     }
 }
